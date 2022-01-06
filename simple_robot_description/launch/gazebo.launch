@@ -7,5 +7,6 @@
     <arg name="gui" value="true"/>
     <arg name="headless" value="false"/>
     <arg name="debug" value="false"/>
+    <!-- <arg name="world_name" value="$(find simple_robot_description)/worlds/costume_cafe"/> -->
   </include>
 </launch>
