@@ -1,0 +1,52 @@
+<?xml version="1.0" ?>
+<robot name="simple_robot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
+
+<xacro:property name="black_color" value="Gazebo/Black" />
+<xacro:property name="white_color" value="Gazebo/White" />
+<xacro:property name="blue_color" value="Gazebo/Blue" />
+
+<xacro:property name="standard_friction" value="0.2" />
+<xacro:property name="wheel_friction" value="10.0" />
+<xacro:property name="caster_friction" value="0.1" />
+
+<gazebo>
+  <plugin filename="libgazebo_ros_control.so" name="control"/>
+</gazebo>
+
+<gazebo reference="base_link">
+  <material>${white_color}</material>
+  <mu1>${standard_friction}</mu1>
+  <mu2>${standard_friction}</mu2>
+  <selfCollide>true</selfCollide>
+  <gravity>true</gravity>
+</gazebo>
+
+<gazebo reference="wheeel_left_1">
+  <material>${black_color}</material>
+  <mu1>${wheel_friction}</mu1>
+  <mu2>${wheel_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="wheel_right_1">
+  <material>${black_color}</material>
+  <mu1>${wheel_friction}</mu1>
+  <mu2>${wheel_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="lidar_1">
+  <material>${blue_color}</material>
+  <mu1>${standard_friction}</mu1>
+  <mu2>${standard_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+<gazebo reference="caster_wheel_1">
+  <material>${black_color}</material>
+  <mu1>${caster_friction}</mu1>
+  <mu2>${caster_friction}</mu2>
+  <selfCollide>true</selfCollide>
+</gazebo>
+
+</robot>
