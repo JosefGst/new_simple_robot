@@ -109,14 +109,14 @@
   </collision>
 </link>
 
-<joint name="base_link_left_wheel_joint" type="continuous">
+<joint name="Rev1" type="continuous">
   <origin rpy="0 0 0" xyz="0.0 0.1 0.075"/>
   <parent link="base_link"/>
   <child link="wheeel_left_1"/>
   <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
-<joint name="base_link_right_wheel_joint" type="continuous">
+<joint name="Rev2" type="continuous">
   <origin rpy="0 0 0" xyz="0.0 -0.1 0.075"/>
   <parent link="base_link"/>
   <child link="wheel_right_1"/>

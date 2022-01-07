@@ -4,9 +4,7 @@
   <!-- rviz -->
   <include file="$(find simple_robot_description)/launch/display.launch"/>
   <!-- gmapping -->
-  <node pkg="gmapping" type="slam_gmapping" name="gmapping_node" >
-  <remap from="scan" to="scan" />
-  </node>
+  <node pkg="gmapping" type="slam_gmapping" name="gmapping_node" />
   <!-- teleop key -->
   <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen" />
 
