@@ -7,3 +7,5 @@ click the terminal where the teleop key runs and move the robot around
 # save map
 `rosrun map_server map_saver -f turtle_home_map`
 
+# SLAM navigation
+`roslaunch simple_robot_description navigation.launch`
