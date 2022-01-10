@@ -1,5 +1,5 @@
 # gmapping
-run 
+run  
 `roslaunch simple_robot_description gmapping.launch`
 
 click the terminal where the teleop key runs and move the robot around
