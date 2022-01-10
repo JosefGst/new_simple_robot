@@ -1,0 +1,874 @@
+<sdf version='1.6'>
+  <world name='default'>
+    <light name='sun' type='directional'>
+      <cast_shadows>1</cast_shadows>
+      <pose frame=''>0 0 10 0 -0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <attenuation>
+        <range>1000</range>
+        <constant>0.9</constant>
+        <linear>0.01</linear>
+        <quadratic>0.001</quadratic>
+      </attenuation>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name='ground_plane'>
+      <static>1</static>
+      <link name='link'>
+        <collision name='collision'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <surface>
+            <contact>
+              <collide_bitmask>65535</collide_bitmask>
+              <ode/>
+            </contact>
+            <friction>
+              <ode>
+                <mu>100</mu>
+                <mu2>50</mu2>
+              </ode>
+              <torsional>
+                <ode/>
+              </torsional>
+            </friction>
+            <bounce/>
+          </surface>
+          <max_contacts>10</max_contacts>
+        </collision>
+        <visual name='visual'>
+          <cast_shadows>0</cast_shadows>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <script>
+              <uri>file://media/materials/scripts/gazebo.material</uri>
+              <name>Gazebo/Grey</name>
+            </script>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+    </model>
+    <gravity>0 0 -9.8</gravity>
+    <magnetic_field>6e-06 2.3e-05 -4.2e-05</magnetic_field>
+    <atmosphere type='adiabatic'/>
+    <physics name='default_physics' default='0' type='ode'>
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1</real_time_factor>
+      <real_time_update_rate>1000</real_time_update_rate>
+    </physics>
+    <scene>
+      <ambient>0.4 0.4 0.4 1</ambient>
+      <background>0.7 0.7 0.7 1</background>
+      <shadows>1</shadows>
+    </scene>
+    <audio>
+      <device>default</device>
+    </audio>
+    <wind/>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>0</latitude_deg>
+      <longitude_deg>0</longitude_deg>
+      <elevation>0</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <model name='rmuc21_battlefield'>
+      <static>1</static>
+      <link name='ground_plane'>
+        <visual name='visual'>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.8 0.8 0.8 1</ambient>
+            <diffuse>0.8 0.8 0.8 1</diffuse>
+            <specular>0.8 0.8 0.8 1</specular>
+          </material>
+        </visual>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='flat_ground'>
+        <visual name='ground_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/flat_ground.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='ground_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/flat_ground.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='wall_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/ground_wall.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='wall_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/ground_wall.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='red_elevated_ground'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <visual name='left_elevated_ground_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/left_elevated_ground.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='left_elevated_ground_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/left_elevated_ground.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='right_elevated_ground_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/right_elevated_ground.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='right_elevated_ground_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/right_elevated_ground.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='left_elevated_ground_wall_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/left_elevated_ground_wall.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>1 0 0 1</specular>
+          </material>
+        </visual>
+        <collision name='left_elevated_ground_wall_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/left_elevated_ground_wall.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='right_elevated_ground_wall_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/right_elevated_ground_wall.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>1 0 0 1</specular>
+          </material>
+        </visual>
+        <collision name='right_elevated_ground_wall_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/right_elevated_ground_wall.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='blue_elevated_ground'>
+        <pose frame=''>0 0 0 0 -0 3.14159</pose>
+        <visual name='left_elevated_ground_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/left_elevated_ground.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='left_elevated_ground_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/left_elevated_ground.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='right_elevated_ground_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/right_elevated_ground.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='right_elevated_ground_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/right_elevated_ground.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='left_elevated_ground_wall_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/left_elevated_ground_wall.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
+          </material>
+        </visual>
+        <collision name='left_elevated_ground_wall_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/left_elevated_ground_wall.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='right_elevated_ground_wall_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/right_elevated_ground_wall.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
+          </material>
+        </visual>
+        <collision name='right_elevated_ground_wall_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_ground/meshes/right_elevated_ground_wall.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='resource_island'>
+        <pose frame=''>0 0 0 0 -0 0.7854</pose>
+        <visual name='base_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_resource_island/meshes/resource_island_base.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='base_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_resource_island/meshes/resource_island_base.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='holder_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_resource_island/meshes/resource_island_holder.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='holder_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_resource_island/meshes/resource_island_holder.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='red__supplier'>
+        <pose frame=''>-13.642 -5.75 0.1 0 -0 0</pose>
+        <visual name='supplier_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_projectile_supplier/meshes/supplier.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='supplier_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_projectile_supplier/meshes/supplier.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='extra_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_projectile_supplier/meshes/supplier_extra.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>1 0 0 1</specular>
+          </material>
+        </visual>
+        <collision name='extra_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_projectile_supplier/meshes/supplier_extra.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='blue_supplier'>
+        <pose frame=''>13.642 5.75 0.1 0 -0 3.14159</pose>
+        <visual name='supplier_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_projectile_supplier/meshes/supplier.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='supplier_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_projectile_supplier/meshes/supplier.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <visual name='extra_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_projectile_supplier/meshes/supplier_extra.dae</uri>
+            </mesh>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
+          </material>
+        </visual>
+        <collision name='extra_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_projectile_supplier/meshes/supplier_extra.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='red_landing_pad'>
+        <pose frame=''>-12.85 6.35 0.1 0 -0 0</pose>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.55 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2.3 2.3 1.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>1 0 0 1</ambient>
+            <diffuse>1 0 0 1</diffuse>
+            <specular>1 0 0 1</specular>
+          </material>
+        </visual>
+        <visual name='sticker_visual'>
+          <pose frame=''>0 0 1.101 0 -0 0</pose>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>2.3 2.3</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0.55 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2.3 2.3 1.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='blue_landing_pad'>
+        <pose frame=''>12.85 -6.35 0.1 0 -0 3.14159</pose>
+        <visual name='visual'>
+          <pose frame=''>0 0 0.55 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2.3 2.3 1.1</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0 0 1 1</ambient>
+            <diffuse>0 0 1 1</diffuse>
+            <specular>0 0 1 1</specular>
+          </material>
+        </visual>
+        <visual name='sticker_visual'>
+          <pose frame=''>0 0 1.101 0 -0 0</pose>
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>2.3 2.3</size>
+            </plane>
+          </geometry>
+          <material>
+            <diffuse>1 1 1 1</diffuse>
+          </material>
+        </visual>
+        <collision name='collision'>
+          <pose frame=''>0 0 0.55 0 -0 0</pose>
+          <geometry>
+            <box>
+              <size>2.3 2.3 1.1</size>
+            </box>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='red_sentry_rail'>
+        <pose frame=''>-8.703 0 1.445 0 -0 0</pose>
+        <visual name='sentry_rail_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_sentry_rail/meshes/sentry_rail.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='sentry_rail_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_sentry_rail/meshes/sentry_rail.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <link name='blue_sentry_rail'>
+        <pose frame=''>8.703 0 1.445 0 -0 0</pose>
+        <visual name='sentry_rail_visual'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_sentry_rail/meshes/sentry_rail.dae</uri>
+            </mesh>
+          </geometry>
+        </visual>
+        <collision name='sentry_rail_collision'>
+          <geometry>
+            <mesh>
+              <uri>model://rmuc21_sentry_rail/meshes/sentry_rail.dae</uri>
+            </mesh>
+          </geometry>
+          <max_contacts>10</max_contacts>
+          <surface>
+            <contact>
+              <ode/>
+            </contact>
+            <bounce/>
+            <friction>
+              <torsional>
+                <ode/>
+              </torsional>
+              <ode/>
+            </friction>
+          </surface>
+        </collision>
+        <self_collide>0</self_collide>
+        <enable_wind>0</enable_wind>
+        <kinematic>0</kinematic>
+      </link>
+      <pose frame=''>10.4594 0.031071 0 0 -0 0</pose>
+    </model>
+    <state world_name='default'>
+      <sim_time>63 441000000</sim_time>
+      <real_time>63 944841679</real_time>
+      <wall_time>1641779582 528537942</wall_time>
+      <iterations>63441</iterations>
+      <model name='ground_plane'>
+        <pose frame=''>0 0 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='link'>
+          <pose frame=''>0 0 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <model name='rmuc21_battlefield'>
+        <pose frame=''>10.4594 0.031071 0 0 -0 0</pose>
+        <scale>1 1 1</scale>
+        <link name='blue_elevated_ground'>
+          <pose frame=''>10.4594 0.031071 0 0 -0 3.14159</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='blue_landing_pad'>
+          <pose frame=''>23.3094 -6.31893 0.1 0 -0 3.14159</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='blue_sentry_rail'>
+          <pose frame=''>19.1624 0.031071 1.445 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='blue_supplier'>
+          <pose frame=''>24.1014 5.78107 0.1 0 -0 3.14159</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='flat_ground'>
+          <pose frame=''>10.4594 0.031071 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='ground_plane'>
+          <pose frame=''>10.4594 0.031071 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='red__supplier'>
+          <pose frame=''>-3.1826 -5.71893 0.1 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='red_elevated_ground'>
+          <pose frame=''>10.4594 0.031071 0 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='red_landing_pad'>
+          <pose frame=''>-2.3906 6.38107 0.1 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='red_sentry_rail'>
+          <pose frame=''>1.7564 0.031071 1.445 0 -0 0</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+        <link name='resource_island'>
+          <pose frame=''>10.4594 0.031071 0 0 -0 0.7854</pose>
+          <velocity>0 0 0 0 -0 0</velocity>
+          <acceleration>0 0 0 0 -0 0</acceleration>
+          <wrench>0 0 0 0 -0 0</wrench>
+        </link>
+      </model>
+      <light name='sun'>
+        <pose frame=''>0 0 10 0 -0 0</pose>
+      </light>
+    </state>
+    <gui fullscreen='0'>
+      <camera name='user_camera'>
+        <pose frame=''>3.58771 -22.4017 14.8237 0 0.599643 1.84419</pose>
+        <view_controller>orbit</view_controller>
+        <projection_type>perspective</projection_type>
+      </camera>
+    </gui>
+  </world>
+</sdf>
