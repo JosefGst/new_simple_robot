@@ -36,7 +36,7 @@
   <selfCollide>true</selfCollide>
 </gazebo>
 
-<gazebo reference="lidar_1">
+<gazebo reference="laser">
   <material>${blue_color}</material>
   <mu1>${standard_friction}</mu1>
   <mu2>${standard_friction}</mu2>
@@ -114,7 +114,7 @@
 
 
 <!-- Lidar -->
-<gazebo reference="lidar_1">
+<gazebo reference="laser">
   <sensor type="gpu_ray" name="rplidar_a1">
     <pose>0 0 0 0 0 0</pose>
     <visualize>false</visualize>
@@ -145,16 +145,16 @@
     </ray>
     <plugin name="gazebo_ros_head_hokuyo_controller" filename="libgazebo_ros_gpu_laser.so">
       <topicName>/scan</topicName>
-      <frameName>lidar_1</frameName>
+      <frameName>laser</frameName>
     </plugin>
   </sensor>
 </gazebo>
 
 
 <!-- Debth camera -->
-<xacro:property name="link_name" value="lidar_1" />
+<!-- <xacro:property name="link_name" value="laser" />
 <xacro:property name="camera_name" value="camera" />
-<xacro:property name="frame_name" value="lidar_1" />
+<xacro:property name="frame_name" value="laser" />
 
 <gazebo reference="${link_name}">
   <sensor name="${link_name}_camera" type="depth">
@@ -196,7 +196,7 @@
       <hackBaseline>0</hackBaseline>
     </plugin>
   </sensor>
-</gazebo>
+</gazebo> -->
 
 
 

@@ -67,7 +67,7 @@
   </collision>
 </link>
 
-<link name="lidar_1">
+<link name="laser">
   <inertial>
     <origin rpy="0 0 0" xyz="0.0 9.046911093940672e-18 0.024999999999999994"/>
     <mass value="0.26640705702441436"/>
@@ -126,7 +126,7 @@
 <joint name="Rigid3" type="fixed">
   <origin rpy="0 0 0" xyz="0.01 0.0 0.165"/>
   <parent link="base_link"/>
-  <child link="lidar_1"/>
+  <child link="laser"/>
 </joint>
 
 <joint name="Rigid4" type="fixed">
