@@ -1,0 +1,30 @@
+<launch>
+
+  <!-- gazebo -->
+  <include file="$(find planar_move_robot_description)/launch/gazebo.launch"/>
+
+  <!-- Arguments -->
+  <arg name="open_rviz" default="true"/>
+  <arg name="move_forward_only" default="true"/>
+  <!-- <arg name="map_file" default="$(find planar_move_robot_description)/maps/house_map.yaml"/> -->
+  <arg name="map_file" default="$(find planar_move_navigation)/maps/battlefield.yaml"/>
+
+  <!-- Really Usefull Robot -->
+
+  <!-- Map server -->
+  <node pkg="map_server" name="map_server" type="map_server" args="$(arg map_file)"/>
+
+  <!-- AMCL -->
+  <include file="$(find planar_move_navigation)/launch/amcl.launch"/>
+
+  <!-- move_base -->
+  <include file="$(find planar_move_navigation)/launch/move_base.launch">
+    <arg name="move_forward_only" value="$(arg move_forward_only)"/>
+  </include>
+
+  <!-- rviz -->
+  <group if="$(arg open_rviz)"> 
+    <include file="$(find planar_move_robot_description)/launch/display.launch"/>
+  </group>
+  
+</launch>

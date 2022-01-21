@@ -1,0 +1,14 @@
+<launch>
+  <!-- gazebo -->
+  <include file="$(find planar_move_robot_description)/launch/gazebo.launch"/>
+  <!-- rviz -->
+  <include file="$(find planar_move_robot_description)/launch/display.launch"/>
+  <!-- gmapping -->
+  <node pkg="gmapping" type="slam_gmapping" name="gmapping_node" >
+    <rosparam command="load" file="$(find planar_move_gmapping)/config/gmapping_params.yaml" />
+  </node>
+  <!-- teleop key -->
+  <node pkg="teleop_twist_keyboard" type="teleop_twist_keyboard.py" name="teleop" output="screen" />
+
+  
+</launch>

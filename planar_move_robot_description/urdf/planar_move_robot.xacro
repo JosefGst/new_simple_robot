@@ -1,0 +1,163 @@
+<?xml version="1.0" ?>
+<robot name="planar_move_robot" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find planar_move_robot_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find planar_move_robot_description)/urdf/planar_move_robot.trans" />
+<xacro:include filename="$(find planar_move_robot_description)/urdf/planar_move_robot.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin rpy="0 0 0" xyz="5.4320949295462994e-14 -2.805834157823502e-17 0.09167558624777426"/>
+    <mass value="162.85001624086075"/>
+    <inertia ixx="2.764455" ixy="0.0" ixz="0.0" iyy="4.758729" iyz="-0.0" izz="7.339706"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://planar_move_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0 0 0"/>
+    <geometry>
+      <mesh filename="package://planar_move_robot_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="laser">
+  <inertial>
+    <origin rpy="0 0 0" xyz="-5.908186836859213e-18 0.0 0.024999999999999994"/>
+    <mass value="1.5105170177541423"/>
+    <inertia ixx="0.000777" ixy="-0.0" ixz="-0.0" iyy="0.000777" iyz="0.0" izz="0.000925"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.18"/>
+    <geometry>
+      <mesh filename="package://planar_move_robot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.0 -0.0 -0.18"/>
+    <geometry>
+      <mesh filename="package://planar_move_robot_description/meshes/lidar_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rear_r_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    <mass value="0.4869468613064179"/>
+    <inertia ixx="0.000487" ixy="0.0" ixz="-0.0" iyy="0.000487" iyz="0.0" izz="0.000487"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.225 0.15 -0.05"/>
+    <geometry>
+      <mesh filename="package://planar_move_robot_description/meshes/rear_r_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.225 0.15 -0.05"/>
+    <geometry>
+      <mesh filename="package://planar_move_robot_description/meshes/rear_r_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_r_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    <mass value="0.4869468613064179"/>
+    <inertia ixx="0.000487" ixy="0.0" ixz="0.0" iyy="0.000487" iyz="0.0" izz="0.000487"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.225 0.15 -0.05"/>
+    <geometry>
+      <mesh filename="package://planar_move_robot_description/meshes/front_r_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.225 0.15 -0.05"/>
+    <geometry>
+      <mesh filename="package://planar_move_robot_description/meshes/front_r_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="front_l_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    <mass value="0.4869468613064179"/>
+    <inertia ixx="0.000487" ixy="0.0" ixz="0.0" iyy="0.000487" iyz="0.0" izz="0.000487"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="-0.225 -0.15 -0.05"/>
+    <geometry>
+      <mesh filename="package://planar_move_robot_description/meshes/front_l_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="-0.225 -0.15 -0.05"/>
+    <geometry>
+      <mesh filename="package://planar_move_robot_description/meshes/front_l_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="rear_l_1">
+  <inertial>
+    <origin rpy="0 0 0" xyz="0.0 0.0 0.0"/>
+    <mass value="0.4869468613064179"/>
+    <inertia ixx="0.000487" ixy="0.0" ixz="-0.0" iyy="0.000487" iyz="-0.0" izz="0.000487"/>
+  </inertial>
+  <visual>
+    <origin rpy="0 0 0" xyz="0.225 -0.15 -0.05"/>
+    <geometry>
+      <mesh filename="package://planar_move_robot_description/meshes/rear_l_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin rpy="0 0 0" xyz="0.225 -0.15 -0.05"/>
+    <geometry>
+      <mesh filename="package://planar_move_robot_description/meshes/rear_l_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rigid1" type="fixed">
+  <origin rpy="0 0 0" xyz="0.0 0.0 0.18"/>
+  <parent link="base_link"/>
+  <child link="laser"/>
+</joint>
+
+<joint name="Rigid2" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.225 -0.15 0.05"/>
+  <parent link="base_link"/>
+  <child link="rear_r_1"/>
+</joint>
+
+<joint name="Rigid3" type="fixed">
+  <origin rpy="0 0 0" xyz="0.225 -0.15 0.05"/>
+  <parent link="base_link"/>
+  <child link="front_r_1"/>
+</joint>
+
+<joint name="Rigid4" type="fixed">
+  <origin rpy="0 0 0" xyz="0.225 0.15 0.05"/>
+  <parent link="base_link"/>
+  <child link="front_l_1"/>
+</joint>
+
+<joint name="Rigid5" type="fixed">
+  <origin rpy="0 0 0" xyz="-0.225 0.15 0.05"/>
+  <parent link="base_link"/>
+  <child link="rear_l_1"/>
+</joint>
+
+</robot>
