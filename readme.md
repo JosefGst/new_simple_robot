@@ -1,7 +1,7 @@
 simple robot is a differential drive robot  
 planar move simulates a mecanum wheel robot but currently rolling on balls  
 
-![alt text](https://github.com/JosefGst/new_simple_robot/blob/main/images/gazebo.png)
+![alt text](https://github.com/JosefGst/new_simple_robot/blob/master/images/gazebo.png)
 
 # gmapping
 you can change the world in the **gazebo.launch** file and run  
