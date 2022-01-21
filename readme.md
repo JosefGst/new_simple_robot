@@ -1,6 +1,8 @@
 # gmapping
 you can change the world in the **gazebo.launch** file and run  
-`roslaunch simple_robot_description gmapping.launch`  
+`roslaunch simple_robot_description gmapping.launch` 
+or  
+`roslaunch planar_move_gmapping gmapping.launch`   
 click the terminal where the teleop key runs and move the robot around with "ijkl,"
 
 ## save map
@@ -10,4 +12,6 @@ cd into folder to save the map
 
 # SLAM navigation
 the map and the world need to match, you can change the map in the **navigation.launch** file and run  
-`roslaunch simple_robot_description navigation.launch`
+`roslaunch simple_robot_description navigation.launch` 
+or   
+`roslaunch planar_move_navigation navigation.launch`
