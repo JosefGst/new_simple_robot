@@ -1,14 +1,10 @@
 <launch>
-
-  <arg name="model" default="$(find simple_robot_description)/urdf/simple.urdf.xacro"/>
-  <arg name="gui" default="true" />
-  <arg name="rvizconfig" default="$(find simple_robot_description)/rviz/urdf.rviz" />
-
-  <param name="robot_description" command="$(find xacro)/xacro.py $(arg model)" />
+  <arg default="$(find simple_robot_description)/urdf/simple_robot.xacro" name="model"/>
+  <arg default="true" name="gui"/>
+  <arg default="$(find simple_robot_description)/launch/urdf.rviz" name="rvizconfig"/>
+  <param command="$(find xacro)/xacro $(arg model)" name="robot_description"/>
   <param name="use_gui" value="$(arg gui)"/>
-
-  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher" />
-  <node name="robot_state_publisher" pkg="robot_state_publisher" type="state_publisher" />
-  <node name="rviz" pkg="rviz" type="rviz" args="-d $(arg rvizconfig)" required="true" />
-
+  <node name="joint_state_publisher" pkg="joint_state_publisher" type="joint_state_publisher"/>
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"/>
+  <node args="-d $(arg rvizconfig)" name="rviz" pkg="rviz" required="true" type="rviz"/>
 </launch>
