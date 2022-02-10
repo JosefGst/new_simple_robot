@@ -6,7 +6,6 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /LaserScan1
       Splitter Ratio: 0.5
     Tree Height: 579
   - Class: rviz/Selection
@@ -99,19 +98,44 @@ Visualization Manager:
       Value: true
       Visual Enabled: true
     - Class: rviz/TF
-      Enabled: false
+      Enabled: true
       Frame Timeout: 15
       Frames:
         All Enabled: true
+        base_link:
+          Value: true
+        caster_wheel:
+          Value: true
+        imu_link:
+          Value: true
+        left_wheel:
+          Value: true
+        lidar_link:
+          Value: true
+        odom:
+          Value: true
+        right_wheel:
+          Value: true
       Marker Scale: 1
       Name: TF
       Show Arrows: true
       Show Axes: true
       Show Names: true
       Tree:
-        {}
+        odom:
+          base_link:
+            caster_wheel:
+              {}
+            imu_link:
+              {}
+            left_wheel:
+              {}
+            lidar_link:
+              {}
+            right_wheel:
+              {}
       Update Interval: 0
-      Value: false
+      Value: true
     - Alpha: 1
       Autocompute Intensity Bounds: true
       Autocompute Value Bounds:
@@ -144,7 +168,7 @@ Visualization Manager:
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: base_link
+    Fixed Frame: odom
     Frame Rate: 30
   Name: root
   Tools:
@@ -168,16 +192,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 3.539968729019165
+      Distance: 2.7916293144226074
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.6256598830223083
-        Y: 0.47217997908592224
-        Z: 0.15190927684307098
+        X: 0.4704527258872986
+        Y: 0.17486867308616638
+        Z: 0.030687369406223297
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
