@@ -99,8 +99,6 @@ Visualization Manager:
           Value: true
         left_wheel:
           Value: true
-        odom:
-          Value: true
         right_wheel:
           Value: true
       Marker Scale: 1
@@ -109,21 +107,20 @@ Visualization Manager:
       Show Axes: true
       Show Names: true
       Tree:
-        odom:
-          base_link:
-            caster_wheel:
-              {}
-            left_wheel:
-              {}
-            right_wheel:
-              {}
+        base_link:
+          caster_wheel:
+            {}
+          left_wheel:
+            {}
+          right_wheel:
+            {}
       Update Interval: 0
       Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
     Default Light: true
-    Fixed Frame: odom
+    Fixed Frame: base_link
     Frame Rate: 30
   Name: root
   Tools:
@@ -147,25 +144,25 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.5703811645507812
+      Distance: 3.215564250946045
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.02050027810037136
-        Y: 0.03956472501158714
-        Z: -0.0711607038974762
+        X: 0.0023610773496329784
+        Y: 0.004386927001178265
+        Z: 0.01679317094385624
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
       Name: Current View
       Near Clip Distance: 0.009999999776482582
-      Pitch: 0.7797973155975342
+      Pitch: 0.22979781031608582
       Target Frame: <Fixed Frame>
       Value: Orbit (rviz)
-      Yaw: 4.3867597579956055
+      Yaw: 5.7317891120910645
     Saved: ~
 Window Geometry:
   Displays:
