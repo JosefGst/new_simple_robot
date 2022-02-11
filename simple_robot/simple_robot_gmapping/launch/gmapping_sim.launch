@@ -1,6 +1,6 @@
 <launch>
   <!-- gazebo -->
-  <include file="$(find simple_robot_description)/launch/simple_controll.launch"/>
+  <include file="$(find simple_robot_description)/launch/sim.launch"/>
   <!-- gmapping -->
   <node pkg="gmapping" type="slam_gmapping" name="gmapping_node" >
     <!-- <rosparam command="load" file="$(find simple_robot_gmapping)/config/gmapping_params.yaml" /> -->
