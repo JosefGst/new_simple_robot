@@ -1,6 +1,8 @@
 <launch>
   <!-- gazebo -->
   <include file="$(find simple_robot_description)/launch/sim.launch"/>
+  <!-- ekf -->
+  <include file="$(find simple_robot_description)/launch/simple_robot_ekf.launch"/>
 
   <!-- Arguments -->
   <arg name="open_rviz" default="true"/>

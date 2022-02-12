@@ -1,5 +1,6 @@
 type: "diff_drive_controller/DiffDriveController"
 publish_rate: 50
+enable_odom_tf: false #disable for ekf
 
 left_wheel: ['base_to_left_wheel']
 right_wheel: ['base_to_right_wheel']
