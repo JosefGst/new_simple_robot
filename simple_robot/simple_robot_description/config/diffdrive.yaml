@@ -1,11 +1,12 @@
 type: "diff_drive_controller/DiffDriveController"
-publish_rate: 50
+publish_rate: 10
 enable_odom_tf: false #disable for ekf
 
 left_wheel: ['base_to_left_wheel']
 right_wheel: ['base_to_right_wheel']
 
 wheel_separation: 0.22
+wheel_radius: 0.032
 
 # Odometry covariances for the encoder output of the robot. These values should
 # be tuned to your robot's sample odometry data, but these values are a good place
