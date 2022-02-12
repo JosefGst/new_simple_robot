@@ -1,0 +1,19 @@
+<launch>
+  <!-- gazebo -->
+  <include file="$(find simple_robot_description)/launch/sim.launch"/>
+  <!-- ekf -->
+  <include file="$(find simple_robot_description)/launch/simple_robot_ekf.launch"/>
+
+  <!-- gmapping -->
+  <node pkg="gmapping" type="slam_gmapping" name="gmapping_node" >
+    <rosparam command="load" file="$(find simple_robot_gmapping)/config/gmapping_params.yaml" />
+  </node>
+
+  <!-- move_base -->
+  <include file="$(find simple_robot_navigation)/launch/move_base.launch">
+    <arg name="move_forward_only" value="false"/>
+    <arg name="cmd_vel_topic" value="/simple_diff_drive_controller/cmd_vel"/>
+  </include>
+
+  <include file="$(find explore_lite)/launch/explore.launch"/>
+</launch>

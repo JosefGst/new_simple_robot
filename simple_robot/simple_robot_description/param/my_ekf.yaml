@@ -25,6 +25,7 @@ imu0_config: [false, false, false,
               true,  false,  false]
 imu0_differential: false
 imu0_relative: true
+imu0_remove_gravitational_acceleration: true
 
 # Which velocities are being controlled. Order is vx, vy, vz, vroll, vpitch, vyaw.
 control_config: [true, false, false, false, false, true]

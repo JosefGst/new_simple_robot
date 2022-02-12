@@ -6,9 +6,7 @@ Panels:
       Expanded:
         - /Global Options1
         - /Status1
-        - /Odometry1
         - /Odometry1/Shape1
-        - /Odometry2
         - /Odometry2/Shape1
         - /PoseArray1
       Splitter Ratio: 0.5
@@ -317,16 +315,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 8.544781684875488
+      Distance: 9.570155143737793
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.18784286081790924
-        Y: -2.7012901306152344
-        Z: -0.08830852806568146
+        X: 0.6553847789764404
+        Y: -1.5577272176742554
+        Z: -0.04031671583652496
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
