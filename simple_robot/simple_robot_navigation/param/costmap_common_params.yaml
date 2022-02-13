@@ -29,8 +29,12 @@
 obstacle_range: 3.0
 raytrace_range: 3.5
 
-footprint: [[-0.105, -0.105], [-0.105, 0.105], [0.041, 0.105], [0.041, -0.105]]
-#robot_radius: 0.105
+footprint: [[-0.13, -0.1225], [-0.13, 0.1225], [0.13, 0.1225], [0.13, -0.1225]]
+# wheel_separation=0.22
+# wheel_len=0.025
+# length=0.25
+# x=length/2=0.125~0.13
+# y=(wheel_separation+wheel_len)/2=0.1225
 
 inflation_radius: 1.0
 cost_scaling_factor: 3.0
