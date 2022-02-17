@@ -15,5 +15,5 @@
     <arg name="cmd_vel_topic" value="/simple_diff_drive_controller/cmd_vel"/>
   </include>
 
-  <include file="$(find explore_lite)/launch/explore.launch"/>
+  <!-- <include file="$(find explore_lite)/launch/explore.launch"/> -->
 </launch>

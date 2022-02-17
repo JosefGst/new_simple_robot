@@ -9,6 +9,7 @@ Panels:
         - /Odometry1/Shape1
         - /Odometry2/Shape1
         - /PoseArray1
+        - /Map2
       Splitter Ratio: 0.5
     Tree Height: 720
   - Class: rviz/Selection
@@ -295,6 +296,16 @@ Visualization Manager:
       Topic: /move_base/local_costmap/footprint
       Unreliable: false
       Value: false
+    - Alpha: 0.5
+      Class: rviz/Map
+      Color Scheme: costmap
+      Draw Behind: false
+      Enabled: true
+      Name: Map
+      Topic: /move_base/global_costmap/costmap
+      Unreliable: false
+      Use Timestamp: false
+      Value: true
   Enabled: true
   Global Options:
     Background Color: 48; 48; 48
@@ -323,16 +334,16 @@ Visualization Manager:
   Views:
     Current:
       Class: rviz/Orbit
-      Distance: 2.472137689590454
+      Distance: 8.285962104797363
       Enable Stereo Rendering:
         Stereo Eye Separation: 0.05999999865889549
         Stereo Focal Distance: 1
         Swap Stereo Eyes: false
         Value: false
       Focal Point:
-        X: 0.27376240491867065
-        Y: -0.47851696610450745
-        Z: 0.2581616938114166
+        X: -0.2815942168235779
+        Y: -1.3254560232162476
+        Z: 0.24794450402259827
       Focal Shape Fixed Size: true
       Focal Shape Size: 0.05000000074505806
       Invert Z Axis: false
