@@ -19,6 +19,6 @@
   </include>
 
   <!-- rviz -->
-  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find simple_robot_navigation)/rviz/config_file.rviz" />
+  <node type="rviz" name="rviz" pkg="rviz" args="-d $(find simple_robot_navigation)/rviz/turtlebot3_navigation.rviz" />
   
 </launch>
