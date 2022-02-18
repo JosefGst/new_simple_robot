@@ -168,7 +168,7 @@
           <cylinder length="${wheel_len}" radius="${wheel_dia/2}"/>
         </geometry>
       </collision>
-      <xacro:default_inertial mass="0.1"/>
+      <xacro:cylinder_inertia m=".3" r="${wheel_dia/2}" h="${wheel_len}"/>
     </link>
     <joint name="wheel_${prefix}_joint" type="continuous">
       <parent link="base_link"/>
