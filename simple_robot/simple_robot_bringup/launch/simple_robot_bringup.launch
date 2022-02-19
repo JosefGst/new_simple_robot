@@ -1,0 +1,13 @@
+<launch>
+  <arg name="multi_robot_name" default=""/>
+  <arg name="set_lidar_frame_id" default="base_scan"/>
+
+  <!-- Arduin -->
+  <include file="$(find ros_arduino_python)/launch/arduino.launch"/>
+
+  <!-- lidar -->
+  <include file="$(find rplidar_ros)/launch/rplidar.launch">
+    <arg name="set_frame_id" value="$(arg set_lidar_frame_id)"/>
+  </include>
+
+</launch>
