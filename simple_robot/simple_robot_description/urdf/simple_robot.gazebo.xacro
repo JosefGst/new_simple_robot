@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <robot name="simple_robot" xmlns:xacro="http://www.ros.org/wiki/xacro" >
   <xacro:arg name="laser_visual" default="false"/>
-  <xacro:arg name="imu_visual"   default="true"/>
+  <xacro:arg name="imu_visual"   default="false"/>
 
   <xacro:property name="update_rate" value="10" />
 
@@ -37,7 +37,8 @@
       <odometryTopic>odom</odometryTopic>
       <odometryFrame>odom</odometryFrame>
       <odometrySource>world</odometrySource>
-      <publishOdomTF>true</publishOdomTF>
+      <!-- publishOdomTF must be false for robot localization ekf node -->
+      <publishOdomTF>false</publishOdomTF>
       <robotBaseFrame>base_footprint</robotBaseFrame>
       <publishWheelTF>false</publishWheelTF>
       <publishTf>true</publishTf>
@@ -46,8 +47,8 @@
       <updateRate>30</updateRate>
       <leftJoint>wheel_left_joint</leftJoint>
       <rightJoint>wheel_right_joint</rightJoint>
-      <wheelSeparation>0.160</wheelSeparation>
-      <wheelDiameter>0.066</wheelDiameter>
+      <wheelSeparation>0.180</wheelSeparation>
+      <wheelDiameter>0.064</wheelDiameter>
       <wheelAcceleration>1</wheelAcceleration>
       <wheelTorque>10</wheelTorque>
       <rosDebugLevel>na</rosDebugLevel>
