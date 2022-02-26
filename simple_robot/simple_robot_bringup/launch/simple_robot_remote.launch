@@ -12,6 +12,6 @@
   </node>
 
   <!-- ekf -->
-  <include file="$(find simple_robot_description)/launch/$(arg model)_ekf.launch"/>
+  <include file="$(find simple_robot_bringup)/launch/$(arg model)_ekf.launch"/>
   
 </launch>
