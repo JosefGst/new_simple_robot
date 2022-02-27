@@ -10,13 +10,13 @@ Current sensors used are:
 `roslaunch simple_robot_simulation simple_world.launch` starts the simulation in Gazebo  
 use `rosrun teleop_twist_keyboard teleop_twist_keyboard.py` to controll the robot manually with "ijkl,"
 
-![alt text](https://github.com/JosefGst/new_simple_robot/blob/master/images/simple_world.png)
+![alt text](https://github.com/JosefGst/new_simple_robot/blob/2022/images/simple_world.png)
 
 ## SLAM 
 `roslaunch simple_robot_gmapping simple_robot_slam.launch` to start gmapping  
 if you still have teleop running you can now move around and generate a map.
 
-![alt text](https://github.com/JosefGst/new_simple_robot/blob/master/images/gmapping.png)
+![alt text](https://github.com/JosefGst/new_simple_robot/blob/2022/images/gmapping.png)
 ## save map
 PS: don't close gazebo and rviz before you haven't saved the map  
 cd into folder where you want to save the map  
@@ -27,7 +27,7 @@ close the SLAM node.
 the map and the world need to match, you can change the map with ,map_file:=$HOME/maps/map.yaml. With the path to the yaml file.
 `roslaunch simple_robot_navigation simple_robot_navigation.launch map_file:=$HOME/maps/map.yaml` 
 
-![alt text](https://github.com/JosefGst/new_simple_robot/blob/master/images/navigation.png)
+![alt text](https://github.com/JosefGst/new_simple_robot/blob/2022/images/navigation.png)
 # Planar move
 **planar move** simulates a mecanum wheel robot but currently rolling on balls  
 ## gmapping
