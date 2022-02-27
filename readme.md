@@ -8,7 +8,8 @@ Current sensors used are:
 - [Turtlebot3](https://emanual.robotis.com/docs/en/platform/turtlebot3/simulation/)
 ## Launch Simulation World
 `roslaunch simple_robot_simulation simple_world.launch` starts the simulation in Gazebo  
-use `rosrun teleop_twist_keyboard teleop_twist_keyboard.py` to controll the robot manually with "ijkl,"
+use `rosrun teleop_twist_keyboard teleop_twist_keyboard.py` to controll the robot manually with "ijkl,"  
+or try `roslaunch simple_robot_gmapping simple_robot_slam.launch slam_methods:=explore` for autonomous exploration
 
 ![alt text](https://github.com/JosefGst/new_simple_robot/blob/2022/images/simple_world.png)
 
@@ -24,7 +25,7 @@ cd into folder where you want to save the map
 
 ## Navigation
 close the SLAM node.  
-the map and the world need to match, you can change the map with ,map_file:=$HOME/maps/map.yaml. With the path to the yaml file.
+the map and the world need to match, you can change the map with ,map_file:=$HOME/maps/map.yaml. With the path to the yaml file.  
 `roslaunch simple_robot_navigation simple_robot_navigation.launch map_file:=$HOME/maps/map.yaml` 
 
 ![alt text](https://github.com/JosefGst/new_simple_robot/blob/2022/images/navigation.png)
