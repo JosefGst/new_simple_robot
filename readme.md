@@ -1,7 +1,7 @@
 # Simple Robot
 **simple robot** is a differential drive robot devoeloped on ROS melodic.  
 Current sensors used are:
-- wheel encoders
+- Wheel Encoders
 - LIDAR
 - IMU
 ## Resources
@@ -30,7 +30,7 @@ the map and the world need to match, you can change the map with ,map_file:=$HOM
 
 ![alt text](https://github.com/JosefGst/new_simple_robot/blob/2022/images/navigation.png)
 # Planar move
-**planar move** simulates a mecanum wheel robot but currently rolling on balls  
+**planar move** should simulates a mecanum wheel robot but currently sliding on balls, however the working is the same. 
 ![alt text](https://github.com/JosefGst/new_simple_robot/blob/2022/images/gazebo.png)
 ## gmapping
 you can change the world in the **gazebo.launch** file and run  
