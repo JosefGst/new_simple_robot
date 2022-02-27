@@ -31,6 +31,7 @@ the map and the world need to match, you can change the map with ,map_file:=$HOM
 ![alt text](https://github.com/JosefGst/new_simple_robot/blob/2022/images/navigation.png)
 # Planar move
 **planar move** simulates a mecanum wheel robot but currently rolling on balls  
+![alt text](https://github.com/JosefGst/new_simple_robot/blob/2022/images/gazebo.png)
 ## gmapping
 you can change the world in the **gazebo.launch** file and run  
 `roslaunch planar_move_gmapping gmapping.launch`   
