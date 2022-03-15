@@ -10,7 +10,6 @@ project(simple_robot_move2goal)
 find_package(catkin REQUIRED COMPONENTS
   actionlib
   move_base_msgs
-  roscpp
   rospy
 )
 
